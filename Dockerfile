@@ -1,9 +1,10 @@
-FROM docker.io/ubuntu:latest
+FROM quay.io/toolbx/ubuntu-toolbox:latest
+# FROM docker.io/ubuntu:latest
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install git git-lfs vim \
                         libwayland-client0 libwayland-egl1 libwayland-cursor0 libwayland-dev libxkbcommon0 \
-                        libvulkan1 libvulkan-dev mesa-vulkan-drivers \
+                        libvulkan1 libvulkan-dev mesa-vulkan-drivers vulkan-tools \
                         pipewire-alsa pipewire alsa-utils \
                         mesa-utils libglu1-mesa-dev freeglut3-dev mesa-common-dev \
                         build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev libgl1-mesa-dev libglu1-mesa-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev
@@ -33,6 +34,5 @@ RUN echo '[ ! -z "$TERM" -a -r /etc/motd ] && echo -e $(cat /etc/issue) && cat /
 ===================================================================\n\
 = Studio Regen Godot Docker Container                             =\n\
 ===================================================================\n\
-(c) Studio Regen (2024-20XX)\n\
 \n"\
     > /etc/motd
