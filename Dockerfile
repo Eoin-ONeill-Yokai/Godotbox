@@ -32,7 +32,7 @@ RUN echo '[ ! -z "$TERM" -a -r /etc/motd ] && echo -e $(cat /etc/issue) && cat /
     >> /etc/bash.bashrc; \
     echo "\n\
 ===================================================================\n\
-= Studio Regen Godot Docker Container                             =\n\
+= Godotbox Docker Container                                       =\n\
 ===================================================================\n\
 \n"\
     > /etc/motd
